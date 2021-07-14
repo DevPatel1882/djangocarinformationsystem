@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+{% load static %}
+
+
+{% block body %}
+<br>
+<br>
+<br>
+<div class="row mb-2">
+    {% for i in usedcar %}
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <spam><strong class="d-inline-block mb-2 text-primary">Old Cars</strong><p></p></spam>
+              <h3 class="mb-0">
+                <p class="text-dark" href="#">{{i.car_model}}({{i.car_company}})</p>
+              </h3>
+              <div class="mb-1 text-muted">{{i.car_year}}({{i.fule_type}})</div>
+              <p class="card-text mb-auto">Kms Driven&nbsp;:-{{i.kms_driven}}</p>
+                <p class="card-text mb-auto">carownership&nbsp;:-{{i.car_ownership}}</p>
+                <hr>
+                <h2>{{i.Expected_price}}</h2>
+                <br>
+              <a href="{{i.id}}" class="btn btn-dark" style="height:40px;width:200px;font-size:15px;letter-spacing:1px;">VIEW SELLER DETAILS</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 250px; height: 250px;" src="/media/{{i.car_img}}" data-holder-rendered="true">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+
+{% endblock %}

@@ -1,0 +1,221 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block body %}
+<br>
+<br>
+<br>
+<style>
+    .my-custom-scrollbar {
+position: relative;
+height: 200px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+</style>
+
+<!--- maruti arena price list start hear --->
+<div class="container">
+  <h2>Maruti Arena Cars Price List (2021) in India</h2>
+  <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
+    <div class="container p-3 my-3 border bg-dark text-white">
+    <input type="text" class="form-control mr-sm-2" id="myInput2" onkeyup="myFunction2()" placeholder="Search for car names.." title="Type in a name">
+    </div>
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table   mb-0 table table-hover" id="myTable2">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Models</th>
+        <th scope="col">EX-Showroom Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- for loop -->
+    {% for i in car1 %}
+      <tr>
+        <th scope="row">{{i.car_id}}</th>
+        <td>{{i.car_name}}</td>
+        <td>{{i.ex_showroom_price}}</td>
+      </tr>
+    {% endfor %}
+
+    <!-- end for loop -->
+
+    </tbody>
+  </table>
+    </div>
+    <script>
+function myFunction2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable2");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+<!--- maruti arena car price list close hear  --->
+<br>
+    <br>
+<!--- maruti nexa price car list hera --->
+    <h2>Maruti Nexa Cars Price List (2021) in India</h2>
+  <p>Maruti currently sells the Baleno, S-Cross, XL6, Ciaz and Ignis through NEXA outlets. S-Cross was the first car to be sold through NEXA outlets. Several new models will be added to both channels as part of the company's medium term goal of 2 million annual sales by 2020.</p>
+    <div class="container p-3 my-3 border bg-dark text-white">
+    <input type="text" class="form-control mr-sm-2" id="myInput1" onkeyup="myFunction()" placeholder="Search for car names.." title="Type in a name">
+    </div>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table  mb-0 table table-hover" id="myTable1">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Models</th>
+        <th scope="col">EX-Showroom Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- for loop -->
+     {% for i in car2 %}
+      <tr>
+        <th scope="row">{{i.car_id}}</th>
+        <td>{{i.car_name}}</td>
+        <td>{{i.ex_showroom_price}}</td>
+      </tr>
+     {% endfor %}
+
+    <!-- end for loop -->
+
+    </tbody>
+  </table>
+    </div>
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput1");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable1");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+<!--- maruti nexa car list close hear --->
+<!-- start Maruti Arena cars details  -->
+  <style>
+    .my-custom-scrollbar-carscroll {
+             position: relative;
+             height: 600px;
+             overflow: auto;
+
+              }
+ </style>
+  <br>
+  <br>
+<div class="container">
+    <h1>Maruti Arena Car Model</h1>
+    <hr style="background-color:orange;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar-carscroll">
+{% for i in car1 %}
+    <div class="row" style="width:90%;">
+        <div class="col" style="padding:10px;">
+            <div style="width:40%;float:left;padding:10px;height:300px;">
+            <img src="/media/{{i.main_img}}" style="width:100%;height:100%;">
+            </div>
+            <div style="width:60%;float:right;padding:25px;">
+                <p style="font-size:38px;margin-left:20px;">{{i.car_name}}</p>
+
+                <p style="font-size:25px;margin-left:20px;"><b>{{i.ex_showroom_price}}</b></p>
+                <p style="font-size:15px;margin-left:20px;color:blue;"><b>(Price in {{i.price_in_city}})</b></p>
+
+                <a href="{{i.car_name}}"><button class="btn btn-dark" style="font-size:25px;margin-left:20px;"><b>View Details</b></button></a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+    </div>
+</div>
+<!-- close Maruti Arena cars details  -->
+<br>
+<br>
+<br>
+<!-- start Maruti Nexa cars details  -->
+ <style>
+    .my-custom-scrollbar-1 {
+             position: relative;
+             height: 300px;
+             overflow: auto;
+
+}
+ </style>
+  <br>
+  <br>
+<div class="container">
+    <h1>Maruti Nexa Car Model</h1>
+    <hr style="background-color:orange;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="#">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar-carscroll">
+{% for i in car2 %}
+    <div class="row" style="width:90%;">
+         <div class="col" style="padding:10px;">
+            <div style="width:40%;float:left;padding:10px;height:300px;">
+            <img src="/media/{{i.main_img}}" style="width:100%;height:100%;">
+            </div>
+            <div style="width:60%;float:right;padding:25px;">
+                <p style="font-size:38px;margin-left:20px;">{{i.car_name}}</p>
+
+                <p style="font-size:25px;margin-left:20px;"><b>{{i.ex_showroom_price}}</b></p>
+                <p style="font-size:15px;margin-left:20px;color:blue;"><b>(Price in {{i.price_in_city}})</b></p>
+
+               <a href="{{i.car_name}}"> <button class="btn btn-dark" style="font-size:25px;margin-left:20px;"><b>View Details</b></button></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+    </div>
+</div>
+
+
+<!-- Close Maruti nexa cars details  -->
+
+{% endblock %}

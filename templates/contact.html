@@ -1,0 +1,45 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %} / Contact us{% endblock %}
+{% block body %}
+<style>
+     .centered{
+       position:absolute;
+       top:100px;
+       margin-left:80px;
+       font-size:50px;
+       color:white;
+       height:30px;
+
+    }
+</style>
+<br>
+<div class="container">
+       <div class="col" style="width:100%;height:300px;">
+           <img src="{% static 'images/t-phon.jpg' %}" width="100%;" height="300px;">
+           <div class="centered"><b>Contact us</b></div>
+       </div>
+       <div class="col">
+           <br>
+            <hr style="background-color:orange;">
+            <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">email</label>
+                  <input type="email" class="form-control" id="Email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="comment">Comment:</label>
+                  <textarea class="form-control" rows="5" id="comment" name="comment" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+       </div>
+</div>
+<br>
+<br>
+{% endblock %}

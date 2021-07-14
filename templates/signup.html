@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Shopping System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/styles.css' %}">
+    <script rel="stylesheet" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+    body{
+        background-image: url("{% static 'images/login1.jpg' %}");
+        background-size:cover;
+        background-repeat:no-repeat;
+        height:100%;
+        width:100%;
+    }
+    #login .container #login-row #login-column #login-box {
+  margin-top: 20px;
+  max-width: 380px;
+  height: 450px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+  margin:auto;
+  opacity:0.9;
+  margin-top: 75px;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -75px;
+}
+.container i {
+
+    cursor: pointer;
+
+}
+</style>
+<body>
+     <div class="container">
+         <div class="row" style="width:80%;height:40px;margin-left:110px;margin-top:1%;background-color:white;">
+
+             <div class="col" style="background-color:white;margin-top:30px;">
+                 <h1 style="text-align:center;"><b>Sign Up</b></h1>
+                  <h4 style="text-align:center;">Create an Account</h4><br>
+                 <form action="{% url 'signup' %}" method="post">
+                     {% csrf_token %}
+                  <div class="row">
+                       <div class="col">
+                           <input type="text" class="form-control" id="firstname" placeholder="Firstname" name="firstname" required>
+                       </div>
+                      <div class="col">
+                            <input type="text" class="form-control" id="lastname" placeholder="Lastname" name="lastname" required>
+                      </div>
+                  </div>
+                  <br>
+                 <input type="text" class="form-control" id="username" placeholder="Username" name="username" required><br>
+                 <input type="email" class="form-control" id="email" placeholder="Email" name="email" required><br>
+                 <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                  <br>
+                 <input type="password" class="form-control" id="confirm_pass" placeholder="Confirm Password" name="confirm_pass" required><br>
+
+
+
+                 <button type="submit" class="btn btn-danger" style="margin-left:1px;width:100px;margin-top:10px;"><b>Sign In</b></button>
+                 </form>
+             </div>
+
+
+             <div class="col" style="background-color:red;" >
+                  <h1 style="text-align:center;color:white;margin-top:120px;"><b>Hello, Friend!</b></h1>
+                  <p style="text-align:center;color:white;">Enter Your Details.<br>Have Nice Day Sir And Mam</p>
+                  <br>
+                  <br>
+                  <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-danger" style="border-color:white;color:white;margin-left:143px;width:150px;geight:20px;border-radius:10px;">Login</button></a>
+             </div>
+
+         </div>
+     </div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<style>
+    .my-custom-scrollbar {
+position: relative;
+height: 200px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+</style>
+
+<!--- car price list hear --->
+<div class="container">
+  <h2>{% for i in ford %}{{i.car_company}}{% endfor %} Cars Price List (2021) in India</h2>
+  <br>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table table-bordered  mb-0 table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Models</th>
+        <th scope="col">EX-Showroom Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- for loop -->
+    {% for i in ford %}
+      <tr>
+        <th scope="row">{{i.car_id}}</th>
+        <td>{{i.car_name}}</td>
+        <td>{{i.ex_showroom_price}}</td>
+      </tr>
+    {% endfor %}
+
+    <!-- end for loop -->
+
+    </tbody>
+  </table>
+    </div>
+<br>
+    <br>
+</div>
+<!--- car price list close hear --->
+
+<!-- start Tata Car model List hear  -->
+  <style>
+    .my-custom-scrollbar-carscroll {
+             position: relative;
+             height: 600px;
+             overflow: auto;
+
+              }
+ </style>
+  <br>
+  <br>
+<div class="container">
+    <h1>{% for i in ford %}{{i.car_company}}{% endfor %}  Car Model</h1>
+    <hr style="background-color:orange;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="#">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar-carscroll">
+{% for i in ford %}
+    <div class="row" style="width:90%;">
+        <div class="col" style="padding:10px;">
+            <div style="width:40%;float:left;padding:10px;height:300px;">
+            <img src="/media/{{i.main_img}}" style="width:100%;height:100%;">
+            </div>
+            <div style="width:60%;float:right;padding:25px;">
+                <p style="font-size:38px;margin-left:20px;">{{i.car_name}}</p>
+
+                <p style="font-size:25px;margin-left:20px;"><b>{{i.ex_showroom_price}}</b></p>
+                <p style="font-size:15px;margin-left:20px;color:blue;"><b>(Price in {{i.price_in_city}})</b></p>
+
+                <a href="{{i.car_name}}"><button class="btn btn-dark" style="font-size:25px;margin-left:20px;"><b>View Details</b></button></a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+    </div>
+</div>
+<!-- close tata car model list hear  -->
+
+{% endblock %}

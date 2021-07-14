@@ -1,0 +1,127 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<div class="container" style="background-color:#f8f9fa;">
+    <h1 style="text-align:center;color:red;">Sell Your Car</h1>
+    <hr style="background-color:orange;">
+    <form action="{% url 'sell_car' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="row">
+       <div class="col" style="width:50%;float:left;">
+           <h3 style="text-align:center;">Fill Your Details</h3>
+           <hr style="background-color:green;">
+                <div class="row" style="margin:auto;width:100%;">
+                     <div class="form-group" >
+                     <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Firstname" required style="height:50px;width:265px;">
+                     </div>
+                     <div class="form-group">
+                     <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Lastname" required style="height:50px;margin-left:10px;width:265px;">
+                     </div>
+                 </div>
+                 <br>
+                 <div class="form-group" >
+                     <input type="email" class="form-control" id="email" name="email" placeholder="Email" required style="height:50px;color:black;">
+                 </div>
+                 <div class="form-group" >
+                     <input type="number" class="form-control" id="number" name="phone_num" placeholder="Phone Number" required style="height:50px;">
+                 </div>
+                 <div class="form-group" >
+                 <select name="state" class="custom-select" style="height:50px;" required>
+                    <option selected>Select Your States</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Punjab">Punjab</option>
+                  </select>
+                 </div>
+                 <div class="form-group" >
+                     <input type="text" name="city" class="form-control" id="city" placeholder="city" required style="height:50px;">
+                 </div>
+                 <div class="form-group" >
+                     <input type="number" name="pincode" class="form-control" id="pincode" placeholder="Pincode" required style="height:50px;">
+                 </div>
+                  <div class="form-group">
+
+                      <textarea class="form-control" rows="4" id="address" name="address" placeholder="Address" required></textarea>
+                    </div>
+       </div>
+        <div class="col" style="width:50%;float:right;">
+            <h3 style="text-align:center;">Fill Your Car Details</h3>
+            <hr style="background-color:green;">
+           <div class="form-group" >
+                 <select name="car_company" class="custom-select" style="height:50px;" required>
+                    <option selected>Select Your Car Company</option>
+                    <option value="Tata Moters">Tata Moters</option>
+                    <option value="Maruti And Suzuki">Maruti And Suzuki</option>
+                    <option value="Mahindra">Mahindra</option>
+                     <option value="Kia">Kia</option>
+                     <option value="MG Hactor">MG Hactor</option>
+                     <option value="Toyota">toyota</option>
+                  </select>
+           </div>
+            <div class="form-group" >
+                 <select name="car_year" class="custom-select" style="height:50px;" required>
+                    <option selected>Select Your Car Year</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                     <option value="2011">2011</option>
+                     <option value="2012">2012</option>
+                     <option value="2013">2013</option>
+                     <option value="2014">2014</option>
+                     <option value="2015">2015</option>
+                     <option value="2016">2016</option>
+                  </select>
+           </div>
+            <div class="form-group" >
+                     <input type="text" class="form-control" name="car_model" id="model" placeholder="Car Model" required style="height:50px;">
+                 </div>
+                <div class="form-group" >
+                     <input type="text" class="form-control" name="kms_driven" id="kms driven" placeholder="KMs Driven" required style="height:50px;">
+                 </div>
+              <div class="form-group" >
+                 <select name="fule_type" class="custom-select" style="height:50px;" required>
+                    <option selected>Fule Type</option>
+                    <option value="Gujarat">Petrol</option>
+                    <option value="New Delhi">Disal</option>
+                    <option value="Punjab">Petrol + CNG</option>
+                  </select>
+                 </div>
+            <div class="form-group" >
+                 <select name="car_ownership" class="custom-select" style="height:50px;" required>
+                    <option selected>Car Ownership</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                     <option value="3">3</option>
+                  </select>
+           </div>
+            <div class="form-group" >
+                 <select name="Expected_price" class="custom-select" style="height:50px;" required>
+                    <option selected>Expected Price</option>
+                    <option value="1,00,000 Lake*">1,00,000 Lake*</option>
+                    <option value="2,00,000 Lake*">2,00,000 Lake*</option>
+                     <option value="3,00,000 Lake*">3,00,000 Lake*</option>
+                     <option value="4,00,000 Lake*">4,00,000 Lake*</option>
+                    <option value="5,00,000 Lake*">5,00,000 Lake*</option>
+                     <option value="6,00,000 Lake*">6,00,000 Lake*</option>
+                  </select>
+           </div>
+           <div class="form-group">
+
+            <input type="file" class="form-control" id="image" name="car_img" style="height:50px;" placeholder="Upload Your Car Images" accept="image/*" required>
+
+          </div>
+
+       </div>
+
+    </div>
+    <hr>
+
+        <button class="btn btn-primary" style="width:100%;height:50px;">Sell Your Car</button>
+</form>
+</div>
+
+{% endblock %}

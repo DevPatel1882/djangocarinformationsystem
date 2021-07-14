@@ -1,0 +1,237 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block body %}
+<br>
+<br>
+<br>
+
+
+
+
+
+<style>
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+</style>
+<br>
+
+<div class="container">
+
+    <hr style="background-color:red;">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+<link rel="stylesheet" href="{% static 'bootstrap/css/styles.css' %}">
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/slider_img/banner-5.jpg' %}" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slider_img/banner-3.jpg' %}" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/slider_img/banner-4.jpg' %}" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+</div>
+<br>
+<br>
+<!-- start cars categorys -->
+<section class="container" id="carlogo" style="padding:20px;">
+  <h1>Choose Your Dream Car</h1>
+   <hr style="background-color:red;">
+
+  <div class="row mx-auto">
+     <div class="col" style="width:33.33%">
+
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <a href="{% url 'maruti' %}"><img src="{% static 'images/cars_logo/Maruti-Suzuki.jpg' %}" style="width:100%;height:250px;" id="maruti"></a>
+            <h1 style="text-align:center;text-decoration:none;color:white" ><b>Maruti Suzuki</b></h1>
+        </div>
+
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+         <a href="{% url 'mahindra' %}"> <img src="{% static 'images/cars_logo/Mahindra.jpg' %}" style="width:100%;height:250px;"></a>
+            <h1 style="text-align:center;"><b>Mahindra</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+         <a href="{% url 'jaguar' %}"> <img src="{% static 'images/cars_logo/jaguar.jpg' %}" style="width:100%;height:250px;"></a>
+            <h1 style="text-align:center;"><b>Jaguar</b></h1>
+        </div>
+      </div>
+
+  </div>
+  <br>
+
+  <div class="row mx-auto">
+     <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <a href="{% url 'tata' %}"><img src="{% static 'images/cars_logo/tata.jpg' %}" style="width:100%;height:250px;"></a>
+            <h1 style="text-align:center;"><b>Tata Moters</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+         <a href="{% url 'hundai' %}"> <img src="{% static 'images/cars_logo/hyundai.png' %}" style="width:100%;height:250px;"></a>
+            <h1 style="text-align:center;"><b>Hyundai</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <a href="{% url 'honda' %}"><img src="{% static 'images/cars_logo/honda.jpg' %}" style="width:100%;height:250px;"></a>
+            <h1 style="text-align:center;"><b>Honda</b></h1>
+        </div>
+      </div>
+
+  </div>
+  <br>
+
+  <div class="row mx-auto">
+     <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <a href="{% url 'ford' %}"><img src="{% static 'images/cars_logo/ford.jpg' %}" style="width:100%;height:250px;"></a>
+            <h1 style="text-align:center;"><b>Ford</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <a href="{% url 'renult' %}"><img src="{% static 'images/cars_logo/renault.jpg' %}" style="width:100%;height:250px;"></a>
+            <h1 style="text-align:center;"><b>Renult</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <a href="{% url 'nissan' %}"><img src="{% static 'images/cars_logo/nissan.jpg' %}" style="width:100%;height:250px;" id="nissan"></a>
+            <h1 style="text-align:center;"><b>Nissan</b></h1>
+        </div>
+      </div>
+
+  </div>
+  <br>
+
+  <div class="row mx-auto">
+     <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/datsun.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Datsun</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/mg.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>MG Hector</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/toyota.png' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Toyota</b></h1>
+        </div>
+      </div>
+
+  </div>
+  <br>
+
+    <div class="row mx-auto">
+     <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/woks_w.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Volkswagen</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/skoda.png' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Skoda</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/kia.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Kia</b></h1>
+        </div>
+      </div>
+
+  </div>
+  <br>
+
+
+    <div class="row mx-auto">
+     <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/bmw.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>BMW</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/ferrari.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Ferrari</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/jeep.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Jeep</b></h1>
+        </div>
+      </div>
+
+  </div>
+  <br>
+
+
+    <div class="row mx-auto">
+     <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/l_rover.png' %}" style="width:100%;height:250px;">
+          <h1 style="text-align:center;"><b>Land Rover</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/lemborgini.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Lamborghini</b></h1>
+        </div>
+      </div>
+    <div class="col" style="width:33.33%">
+        <div class="card mx-auto mb-3" style="background-color:red;color:white;border-color:#A4A4A4;">
+          <img src="{% static 'images/cars_logo/r_royal.jpg' %}" style="width:100%;height:250px;">
+            <h1 style="text-align:center;"><b>Rolls-Royce</b></h1>
+        </div>
+      </div>
+
+  </div>
+  <br>
+
+
+
+</section>
+
+
+
+<!-- close cars categorys -->
+
+
+{% endblock %}

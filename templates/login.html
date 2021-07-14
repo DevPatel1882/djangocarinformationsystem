@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Appear</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/styles.css' %}">
+    <script rel="stylesheet" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+    body{
+        background-image: url("{% static 'images/login1.jpg' %}");
+        background-size:cover;
+        background-repeat:no-repeat;
+        height:100%;
+        width:100%;
+    }
+    #login .container #login-row #login-column #login-box {
+  margin-top: 20px;
+  max-width: 380px;
+  height: 450px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+  margin:auto;
+  opacity:0.9;
+  margin-top: 75px;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -75px;
+}
+</style>
+<body>
+     <div class="container">
+         <div class="row" style="width:60%;height:400px;margin-left:200px;margin-top:10%;background-color:white;">
+
+             <div class="col" style="background-color:white;margin-top:30px;">
+                 <h1 style="text-align:center;" ><b>Sign In</b></h1>
+                  <h6 style="text-align:center;">or use your account</h6><br><br>
+                 <form action="{% url 'login' %}" method="post">
+                     {% csrf_token %}
+                 <input type="text" class="form-control" id="lusername" placeholder="Username" name="lusername" required><br>
+                 <input type="password" class="form-control" id="lpassword" placeholder="Password" name="lpassword" required><br>
+                 <a href="#"><h6 style="text-align:center;">Forgot Your Password?</h6></a>
+                  <br>
+
+                 <button type="submit" class="btn btn-danger" style="margin-left:100px;"><b>Sign In</b></button>
+                 </form>
+             </div>
+
+
+             <div class="col" style="background-color:red;" >
+                  <h1 style="text-align:center;color:white;margin-top:70px;"><b>Hello, Friend!</b></h1>
+                  <p style="text-align:center;color:white;">Enter Your Details.<br>Have Nice Day Sir And Mam</p>
+                  <br>
+                  <br>
+                  <a href="{% url 'signup' %}"><button type="button" class="btn btn-outline-danger" style="border-color:white;color:white;margin-left:70px;width:150px;geight:20px;border-radius:10px;">Sign Up</button></a>
+             </div>
+
+         </div>
+     </div>
+</body>
+</html>
